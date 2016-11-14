@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="93474cb5001e13e0a61bbfb65c5b095930932f9e">
+        <dex dex="/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_41615dc501cc35e5a726d6ad0290c84aacfe6bfc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="038173929a48dc1c8712cfa8a51c4e517ad88cc1">
+        <dex dex="/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_f03cf62b7996aba5d240e57a2eae970fad3fd1e8/classes.dex" />
+    </item>
+
+</items>
