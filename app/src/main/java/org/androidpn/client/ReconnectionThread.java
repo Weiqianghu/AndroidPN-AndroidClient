@@ -22,9 +22,9 @@ import android.util.Log;
  *
  * @author Sehwan Noh (devnoh@gmail.com)
  */
-public class ReconnectionThread extends Thread {
+class ReconnectionThread extends Thread {
 
-    private static final String LOGTAG = LogUtil
+    private static final String LOG_TAG = LogUtil
             .makeLogTag(ReconnectionThread.class);
 
     private final XmppManager xmppManager;
@@ -38,8 +38,8 @@ public class ReconnectionThread extends Thread {
 
     public void run() {
         try {
-            while (!isInterrupted()) {
-                Log.d(LOGTAG, "Trying to reconnect in " + waiting()
+            while (!isInterrupted() && !xmppManager.getConnection().isAuthenticated()) {
+                Log.d(LOG_TAG, "Trying to reconnect in " + waiting()
                         + " seconds");
                 Thread.sleep((long) waiting() * 1000L);
                 xmppManager.connect();

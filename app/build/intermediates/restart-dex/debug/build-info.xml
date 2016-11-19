@@ -5,40 +5,33 @@
     density="hdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="5561806379797"
+    timestamp="8180137563502"
     token="3220557796089589507"
-    verifier="COLD_SWAP_REQUESTED" >
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="729" />
+        duration="4359" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="76" />
+        duration="3218" />
     <task
         name="verifier"
-        duration="33" />
+        duration="414" />
 
     <artifact
-        location="/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex"
-        type="DEX" />
+        location="/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/outputs/apk/app-debug.apk"
+        type="MAIN" />
 
     <build
-        timestamp="2417383770650"
+        timestamp="8180137563502"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
-    </build>
-    <build
-        timestamp="5561806379797"
-        verifier="COLD_SWAP_REQUESTED" >
-        <artifact
-            location="/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex"
-            type="DEX" />
     </build>
 
 </instant-run>
