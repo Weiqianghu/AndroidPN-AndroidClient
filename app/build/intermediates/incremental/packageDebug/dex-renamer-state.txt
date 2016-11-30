@@ -1,4 +1,4 @@
-#Sat Nov 19 12:13:45 CST 2016
+#Wed Nov 30 22:08:22 CST 2016
 base.0=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_41615dc501cc35e5a726d6ad0290c84aacfe6bfc
 renamed.1=classes2.dex
 renamed.0=classes.dex
