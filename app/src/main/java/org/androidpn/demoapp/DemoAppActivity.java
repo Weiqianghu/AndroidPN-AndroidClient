@@ -25,7 +25,7 @@ import android.widget.Button;
 
 /**
  * This is an androidpn client demo application.
- * 
+ *
  * @author Sehwan Noh (devnoh@gmail.com)
  */
 public class DemoAppActivity extends Activity {
@@ -49,6 +49,7 @@ public class DemoAppActivity extends Activity {
         ServiceManager serviceManager = new ServiceManager(this);
         serviceManager.setNotificationIcon(R.drawable.notification);
         serviceManager.startService();
+        serviceManager.setAlias("123456");
     }
 
 }

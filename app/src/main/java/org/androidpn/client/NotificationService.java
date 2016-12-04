@@ -33,10 +33,10 @@ import android.telephony.TelephonyManager;
 import android.util.Log;
 
 /**
- * Service that continues to run in background and respond to the push 
+ * Service that continues to run in background and respond to the push
  * notification events from the server. This should be registered as service
- * in AndroidManifest.xml. 
- * 
+ * in AndroidManifest.xml.
+ *
  * @author Sehwan Noh (devnoh@gmail.com)
  */
 public class NotificationService extends Service {
@@ -70,6 +70,8 @@ public class NotificationService extends Service {
 
     private String deviceId;
 
+    private static NotificationService sNotificationService;
+
     public NotificationService() {
         notificationReceiver = new NotificationReceiver();
         connectivityReceiver = new ConnectivityReceiver(this);
@@ -94,7 +96,7 @@ public class NotificationService extends Service {
         // Log.d(LOGTAG, "deviceId=" + deviceId);
         Editor editor = sharedPrefs.edit();
         editor.putString(Constants.DEVICE_ID, deviceId);
-        editor.commit();
+        editor.apply();
 
         // If running on an emulator
         if (deviceId == null || deviceId.trim().length() == 0
@@ -119,6 +121,9 @@ public class NotificationService extends Service {
                 NotificationService.this.start();
             }
         });
+
+        sNotificationService = this;
+
     }
 
     @Override
@@ -129,6 +134,7 @@ public class NotificationService extends Service {
     @Override
     public void onDestroy() {
         Log.d(LOGTAG, "onDestroy()...");
+        sNotificationService = null;
         stop();
     }
 
@@ -150,7 +156,7 @@ public class NotificationService extends Service {
     }
 
     public static Intent getIntent(Context context) {
-        return new Intent(context,NotificationService.class);
+        return new Intent(context, NotificationService.class);
     }
 
     public ExecutorService getExecutorService() {
@@ -293,6 +299,10 @@ public class NotificationService extends Service {
             }
         }
 
+    }
+
+    public static NotificationService getNotificationService() {
+        return sNotificationService;
     }
 
 }

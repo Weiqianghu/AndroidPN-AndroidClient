@@ -234,7 +234,7 @@ public class XmppManager {
         return connection != null && connection.isConnected();
     }
 
-    private boolean isAuthenticated() {
+    public boolean isAuthenticated() {
         return connection != null && connection.isConnected()
                 && connection.isAuthenticated();
     }
@@ -372,7 +372,7 @@ public class XmppManager {
                                     Log.e(LOGTAG, "Unknown error while registering XMPP account! " + response.getError().getCondition());
                                 }
                             } else if (response.getType() == IQ.Type.RESULT) {
-                                isRegisterSucceed=true;
+                                isRegisterSucceed = true;
                                 xmppManager.setUsername(newUsername);
                                 xmppManager.setPassword(newPassword);
                                 Log.d(LOGTAG, "username=" + newUsername);
@@ -404,11 +404,11 @@ public class XmppManager {
                 connection.sendPacket(registration);
 
                 try {
-                    Thread.sleep(10*1000);
+                    Thread.sleep(10 * 1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                if(!isRegisterSucceed) {
+                if (!isRegisterSucceed) {
                     xmppManager.dropTask(1);
                     xmppManager.startReconnectionThread();
                     xmppManager.runTask();
@@ -444,7 +444,8 @@ public class XmppManager {
                     Log.d(LOGTAG, "Loggedn in successfully");
 
                     // connection listener
-                    if (xmppManager.getConnectionListener() != null) {xmppManager.getConnection().addConnectionListener(xmppManager.getConnectionListener());
+                    if (xmppManager.getConnectionListener() != null) {
+                        xmppManager.getConnection().addConnectionListener(xmppManager.getConnectionListener());
                     }
 
                     // packet filter
@@ -456,6 +457,10 @@ public class XmppManager {
                     connection.addPacketListener(packetListener, packetFilter);
 
                     connection.startHeartBeat();
+
+                    synchronized (xmppManager) {
+                        xmppManager.notifyAll();
+                    }
                 } catch (XMPPException e) {
                     Log.e(LOGTAG, "LoginTask.run()... xmpp error");
                     Log.e(LOGTAG, "Failed to login to xmpp server. Caused by: " + e.getMessage());
@@ -472,7 +477,7 @@ public class XmppManager {
                     Log.e(LOGTAG, "Failed to login to xmpp server. Caused by: "
                             + e.getMessage());
                     xmppManager.startReconnectionThread();
-                }finally {
+                } finally {
                     xmppManager.runTask();
                 }
             } else {

@@ -5,47 +5,47 @@
     density="hdpi"
     format="8"
     plugin-version="2.2.2"
-    timestamp="6871376438577"
+    timestamp="5851015578701"
     token="3220557796089589507"
     verifier="COLD_SWAP_REQUESTED" >
 
     <task
         name="javac"
-        duration="1547" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="47" />
+        duration="0" />
     <task
         name="verifier"
-        duration="1" />
+        duration="0" />
 
     <artifact
-        location="/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex"
-        type="DEX" />
+        location="/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
+        type="RESOURCES" />
 
     <build
-        timestamp="5442564238705"
+        timestamp="5580279739200"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/outputs/apk/app-debug.apk"
             type="MAIN" />
     </build>
     <build
-        timestamp="6871376438577"
+        timestamp="5741225155258"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
             location="/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_7/classes.dex"
             type="DEX" />
     </build>
     <build
-        timestamp="8180137563502"
-        verifier="FULL_BUILD_REQUESTED" >
+        timestamp="5851015578701"
+        verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/outputs/apk/app-debug.apk"
-            type="MAIN" />
+            location="/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/instant-run-resources/resources-debug.ir.ap_"
+            type="RESOURCES" />
     </build>
 
 </instant-run>

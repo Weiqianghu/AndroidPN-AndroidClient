@@ -22,35 +22,28 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.text.TextUtils;
 import android.util.Log;
 
-/** 
+import org.jivesoftware.smack.packet.IQ;
+
+/**
  * This class is to manage the notificatin service and to load the configuration.
  *
  * @author Sehwan Noh (devnoh@gmail.com)
  */
 public final class ServiceManager {
 
-    private static final String LOGTAG = LogUtil
-            .makeLogTag(ServiceManager.class);
+    private static final String LOGTAG = LogUtil.makeLogTag(ServiceManager.class);
 
     private Context context;
 
     private SharedPreferences sharedPrefs;
 
-    private Properties props;
-
-    private String version = "0.5.0";
-
-    private String apiKey;
-
-    private String xmppHost;
-
-    private String xmppPort;
-
     private String callbackActivityPackageName;
 
     private String callbackActivityClassName;
+
 
     public ServiceManager(Context context) {
         this.context = context;
@@ -69,10 +62,10 @@ public final class ServiceManager {
         //        //            throw new RuntimeException();
         //        //        }
 
-        props = loadProperties();
-        apiKey = props.getProperty("apiKey", "");
-        xmppHost = props.getProperty("xmppHost", "127.0.0.1");
-        xmppPort = props.getProperty("xmppPort", "5222");
+        Properties props = loadProperties();
+        String apiKey = props.getProperty("apiKey", "");
+        String xmppHost = props.getProperty("xmppHost", "127.0.0.1");
+        String xmppPort = props.getProperty("xmppPort", "5222");
         Log.i(LOGTAG, "apiKey=" + apiKey);
         Log.i(LOGTAG, "xmppHost=" + xmppHost);
         Log.i(LOGTAG, "xmppPort=" + xmppPort);
@@ -81,6 +74,7 @@ public final class ServiceManager {
                 Constants.SHARED_PREFERENCE_NAME, Context.MODE_PRIVATE);
         Editor editor = sharedPrefs.edit();
         editor.putString(Constants.API_KEY, apiKey);
+        String version = "0.5.0";
         editor.putString(Constants.VERSION, version);
         editor.putString(Constants.XMPP_HOST, xmppHost);
         editor.putInt(Constants.XMPP_PORT, Integer.parseInt(xmppPort));
@@ -88,7 +82,7 @@ public final class ServiceManager {
                 callbackActivityPackageName);
         editor.putString(Constants.CALLBACK_ACTIVITY_CLASS_NAME,
                 callbackActivityClassName);
-        editor.commit();
+        editor.apply();
         // Log.i(LOGTAG, "sharedPrefs=" + sharedPrefs.toString());
     }
 
@@ -180,7 +174,7 @@ public final class ServiceManager {
     public void setNotificationIcon(int iconId) {
         Editor editor = sharedPrefs.edit();
         editor.putInt(Constants.NOTIFICATION_ICON, iconId);
-        editor.commit();
+        editor.apply();
     }
 
     //    public void viewNotificationSettings() {
@@ -195,4 +189,46 @@ public final class ServiceManager {
         context.startActivity(intent);
     }
 
+
+    public void setAlias(final String alias) {
+        if (TextUtils.isEmpty(alias)) {
+            return;
+        }
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                NotificationService notificationService = NotificationService.getNotificationService();
+                while (notificationService == null) {
+                    try {
+                        Thread.sleep(100);
+                        notificationService = NotificationService.getNotificationService();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                XmppManager xmppManager = notificationService.getXmppManager();
+                if (xmppManager != null) {
+                    if (!xmppManager.isAuthenticated()) {
+                        try {
+                            synchronized (xmppManager) {
+                                Log.d(LOGTAG, "run: wait for isAuthenticated");
+                                xmppManager.wait();
+                            }
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    Log.d(LOGTAG, "Authenticated send setAliasIQ ...");
+                    String username = sharedPrefs.getString(Constants.XMPP_USERNAME, "");
+                    if (!TextUtils.isEmpty(username)) {
+                        SetAliasIQ setAliasIQ = new SetAliasIQ();
+                        setAliasIQ.setType(IQ.Type.SET);
+                        setAliasIQ.setUsername(username);
+                        setAliasIQ.setAlias(alias);
+                        xmppManager.getConnection().sendPacket(setAliasIQ);
+                    }
+                }
+            }
+        }).start();
+    }
 }
