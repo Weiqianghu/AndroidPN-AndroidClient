@@ -15,6 +15,7 @@
  */
 package org.androidpn.client;
 
+import java.util.List;
 import java.util.Properties;
 
 import android.app.Activity;
@@ -191,7 +192,8 @@ public final class ServiceManager {
 
 
     public void setAlias(final String alias) {
-        if (TextUtils.isEmpty(alias)) {
+        final String username = sharedPrefs.getString(Constants.XMPP_USERNAME, "");
+        if (TextUtils.isEmpty(alias) || TextUtils.isEmpty(username)) {
             return;
         }
         new Thread(new Runnable() {
@@ -219,14 +221,55 @@ public final class ServiceManager {
                         }
                     }
                     Log.d(LOGTAG, "Authenticated send setAliasIQ ...");
-                    String username = sharedPrefs.getString(Constants.XMPP_USERNAME, "");
-                    if (!TextUtils.isEmpty(username)) {
-                        SetAliasIQ setAliasIQ = new SetAliasIQ();
-                        setAliasIQ.setType(IQ.Type.SET);
-                        setAliasIQ.setUsername(username);
-                        setAliasIQ.setAlias(alias);
-                        xmppManager.getConnection().sendPacket(setAliasIQ);
+
+                    SetAliasIQ setAliasIQ = new SetAliasIQ();
+                    setAliasIQ.setType(IQ.Type.SET);
+                    setAliasIQ.setUsername(username);
+                    setAliasIQ.setAlias(alias);
+                    xmppManager.getConnection().sendPacket(setAliasIQ);
+
+                }
+            }
+        }).start();
+    }
+
+    public void setTags(final List<String> tags) {
+        final String username = sharedPrefs.getString(Constants.XMPP_USERNAME, "");
+        if (tags == null || tags.isEmpty() || TextUtils.isEmpty(username)) {
+            return;
+        }
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                NotificationService notificationService = NotificationService.getNotificationService();
+                while (notificationService == null) {
+                    try {
+                        Thread.sleep(100);
+                        notificationService = NotificationService.getNotificationService();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
                     }
+                }
+                XmppManager xmppManager = notificationService.getXmppManager();
+                if (xmppManager != null) {
+                    if (!xmppManager.isAuthenticated()) {
+                        try {
+                            synchronized (xmppManager) {
+                                Log.d(LOGTAG, "run: wait for isAuthenticated");
+                                xmppManager.wait();
+                            }
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    Log.d(LOGTAG, "Authenticated send setTags ...");
+
+                    SetTagIQ setTagIQ = new SetTagIQ();
+                    setTagIQ.setType(IQ.Type.SET);
+                    setTagIQ.setUsername(username);
+                    setTagIQ.setTags(tags);
+                    xmppManager.getConnection().sendPacket(setTagIQ);
+
                 }
             }
         }).start();

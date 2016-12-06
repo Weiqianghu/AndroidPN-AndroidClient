@@ -16,12 +16,16 @@
 package org.androidpn.demoapp;
 
 import org.androidpn.client.ServiceManager;
+import org.jivesoftware.smack.util.dns.SRVRecord;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This is an androidpn client demo application.
@@ -50,6 +54,12 @@ public class DemoAppActivity extends Activity {
         serviceManager.setNotificationIcon(R.drawable.notification);
         serviceManager.startService();
         serviceManager.setAlias("123456");
+
+        List<String> tags = new ArrayList<>();
+        tags.add("tech");
+        tags.add("sport");
+
+        serviceManager.setTags(tags);
     }
 
 }

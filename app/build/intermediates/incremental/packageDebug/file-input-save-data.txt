@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Sun Dec 04 22:02:45 CST 2016
+#Tue Dec 06 23:28:44 CST 2016
 8.set=DEX
 1.base=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_f03cf62b7996aba5d240e57a2eae970fad3fd1e8
 1.file=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_f03cf62b7996aba5d240e57a2eae970fad3fd1e8/classes.dex
@@ -11,7 +11,7 @@
 5.file=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/res/resources-debug.ap_/res/drawable/notification.png
 7.base=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/res/resources-debug.ap_
 7.file=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/res/resources-debug.ap_/resources.arsc
-11.file=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/res/resources-debug.ap_/res/raw/androidpn.properties
+11.file=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/res/resources-debug.ap_/res/drawable-hdpi-v4/icon.png
 11.base=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/res/resources-debug.ap_
 9.base=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_41615dc501cc35e5a726d6ad0290c84aacfe6bfc
 9.file=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_41615dc501cc35e5a726d6ad0290c84aacfe6bfc/classes.dex
@@ -43,7 +43,7 @@
 8.base=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_9
 8.file=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_9/classes.dex
 2.set=DEX
-12.file=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/res/resources-debug.ap_/res/drawable-hdpi-v4/icon.png
+12.file=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/res/resources-debug.ap_/res/raw/androidpn.properties
 12.base=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/res/resources-debug.ap_
 14.file=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_2/classes.dex
 14.base=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/transforms/dex/debug/folders/1000/5/slice_2
