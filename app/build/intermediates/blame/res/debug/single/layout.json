@@ -1,6 +1,10 @@
 [
     {
-        "merged": "/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/res/merged/debug/layout/main.xml",
-        "source": "/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/src/main/res/layout/main.xml"
+        "merged": "K:\\Android-workplace\\AndroidPN-AndroidClient\\app\\build\\intermediates\\res\\merged\\debug\\layout\\main.xml",
+        "source": "K:\\Android-workplace\\AndroidPN-AndroidClient\\app\\src\\main\\res\\layout\\main.xml"
+    },
+    {
+        "merged": "K:\\home\\huweiqiang\\AndroidStudioProjects\\androidpn-client\\app\\build\\intermediates\\res\\merged\\debug\\layout\\main.xml",
+        "source": "K:\\home\\huweiqiang\\AndroidStudioProjects\\androidpn-client\\app\\src\\main\\res\\layout\\main.xml"
     }
 ]

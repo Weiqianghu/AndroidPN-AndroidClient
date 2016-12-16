@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+        "outputFile": "K:\\Android-workplace\\AndroidPN-AndroidClient\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,69 @@
                     "endOffset": 103
                 },
                 "from": {
-                    "file": "/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/src/main/res/values/strings.xml",
+                    "file": "K:\\Android-workplace\\AndroidPN-AndroidClient\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 57,
+                        "endColumn": 52,
+                        "endOffset": 105
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 108,
+                    "endColumn": 65,
+                    "endOffset": 169
+                },
+                "from": {
+                    "file": "K:\\Android-workplace\\AndroidPN-AndroidClient\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 111,
+                        "endColumn": 65,
+                        "endOffset": 172
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 174,
+                    "endColumn": 45,
+                    "endOffset": 215
+                },
+                "from": {
+                    "file": "K:\\Android-workplace\\AndroidPN-AndroidClient\\app\\src\\main\\res\\values\\strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 178,
+                        "endColumn": 45,
+                        "endOffset": 219
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "K:\\home\\huweiqiang\\AndroidStudioProjects\\androidpn-client\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 52,
+                    "endOffset": 103
+                },
+                "from": {
+                    "file": "K:\\home\\huweiqiang\\AndroidStudioProjects\\androidpn-client\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -30,7 +92,7 @@
                     "endOffset": 169
                 },
                 "from": {
-                    "file": "/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/src/main/res/values/strings.xml",
+                    "file": "K:\\home\\huweiqiang\\AndroidStudioProjects\\androidpn-client\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -49,7 +111,7 @@
                     "endOffset": 215
                 },
                 "from": {
-                    "file": "/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/src/main/res/values/strings.xml",
+                    "file": "K:\\home\\huweiqiang\\AndroidStudioProjects\\androidpn-client\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
