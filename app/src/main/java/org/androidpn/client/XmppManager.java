@@ -15,11 +15,6 @@
  */
 package org.androidpn.client;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
-import java.util.concurrent.Future;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
@@ -39,6 +34,11 @@ import org.jivesoftware.smack.packet.IQ;
 import org.jivesoftware.smack.packet.Packet;
 import org.jivesoftware.smack.packet.Registration;
 import org.jivesoftware.smack.provider.ProviderManager;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+import java.util.concurrent.Future;
 
 /**
  * This class is to manage the XMPP connection between client and server.
@@ -77,7 +77,7 @@ public class XmppManager {
 
     private final List<Runnable> taskList;
 
-    private boolean running = false;
+    private volatile boolean running = false;
 
     private Future<?> futureTask;
 
