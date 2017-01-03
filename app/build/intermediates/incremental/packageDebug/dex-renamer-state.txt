@@ -1,7 +1,7 @@
-#Tue Dec 06 23:28:44 CST 2016
-base.0=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_41615dc501cc35e5a726d6ad0290c84aacfe6bfc
+#Tue Jan 03 20:18:28 CST 2017
+base.0=K\:\\Android-workplace\\AndroidPN-AndroidClient\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_ef013e7b5a5f18e8745a0ed729e3d52ddec389d2
 renamed.1=classes2.dex
 renamed.0=classes.dex
-file.1=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_f03cf62b7996aba5d240e57a2eae970fad3fd1e8/classes.dex
-base.1=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_f03cf62b7996aba5d240e57a2eae970fad3fd1e8
-file.0=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_41615dc501cc35e5a726d6ad0290c84aacfe6bfc/classes.dex
+file.1=K\:\\Android-workplace\\AndroidPN-AndroidClient\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_020ac5a2174602933ecf4a688342e4241ef4f6c0\\classes.dex
+base.1=K\:\\Android-workplace\\AndroidPN-AndroidClient\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run_020ac5a2174602933ecf4a688342e4241ef4f6c0
+file.0=K\:\\Android-workplace\\AndroidPN-AndroidClient\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\instant-run-bootstrap_ef013e7b5a5f18e8745a0ed729e3d52ddec389d2\\classes.dex

@@ -1,9 +1,5 @@
 [
     {
-        "merged": "K:\\home\\huweiqiang\\AndroidStudioProjects\\androidpn-client\\app\\build\\intermediates\\res\\merged\\debug\\raw\\androidpn.properties",
-        "source": "K:\\home\\huweiqiang\\AndroidStudioProjects\\androidpn-client\\app\\src\\main\\res\\raw\\androidpn.properties"
-    },
-    {
         "merged": "K:\\Android-workplace\\AndroidPN-AndroidClient\\app\\build\\intermediates\\res\\merged\\debug\\raw\\androidpn.properties",
         "source": "K:\\Android-workplace\\AndroidPN-AndroidClient\\app\\src\\main\\res\\raw\\androidpn.properties"
     }

@@ -15,8 +15,6 @@
  */
 package org.androidpn.client;
 
-import java.util.Random;
-
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -26,7 +24,9 @@ import android.content.SharedPreferences;
 import android.util.Log;
 import android.widget.Toast;
 
-/** 
+import java.util.Random;
+
+/**
  * This class is to notify the user of messages with NotificationManager.
  *
  * @author Sehwan Noh (devnoh@gmail.com)
@@ -52,7 +52,7 @@ public class Notifier {
     }
 
     public void notify(String notificationId, String apiKey, String title,
-            String message, String uri) {
+                       String message, String uri, String imgUrl) {
         Log.d(LOGTAG, "notify()...");
 
         Log.d(LOGTAG, "notificationId=" + notificationId);
@@ -81,22 +81,6 @@ public class Notifier {
             notification.when = System.currentTimeMillis();
             notification.tickerText = message;
 
-            //            Intent intent;
-            //            if (uri != null
-            //                    && uri.length() > 0
-            //                    && (uri.startsWith("http:") || uri.startsWith("https:")
-            //                            || uri.startsWith("tel:") || uri.startsWith("geo:"))) {
-            //                intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
-            //            } else {
-            //                String callbackActivityPackageName = sharedPrefs.getString(
-            //                        Constants.CALLBACK_ACTIVITY_PACKAGE_NAME, "");
-            //                String callbackActivityClassName = sharedPrefs.getString(
-            //                        Constants.CALLBACK_ACTIVITY_CLASS_NAME, "");
-            //                intent = new Intent().setClassName(callbackActivityPackageName,
-            //                        callbackActivityClassName);
-            //                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            //                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
-            //            }
 
             Intent intent = new Intent(context,
                     NotificationDetailsActivity.class);
@@ -105,6 +89,7 @@ public class Notifier {
             intent.putExtra(Constants.NOTIFICATION_TITLE, title);
             intent.putExtra(Constants.NOTIFICATION_MESSAGE, message);
             intent.putExtra(Constants.NOTIFICATION_URI, uri);
+            intent.putExtra(Constants.NOTIFICATION_IMG_URL, imgUrl);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.setFlags(Intent.FLAG_ACTIVITY_EXCLUDE_FROM_RECENTS);
             intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
@@ -117,36 +102,6 @@ public class Notifier {
             notification.setLatestEventInfo(context, title, message,
                     contentIntent);
             notificationManager.notify(random.nextInt(), notification);
-
-            //            Intent clickIntent = new Intent(
-            //                    Constants.ACTION_NOTIFICATION_CLICKED);
-            //            clickIntent.putExtra(Constants.NOTIFICATION_ID, notificationId);
-            //            clickIntent.putExtra(Constants.NOTIFICATION_API_KEY, apiKey);
-            //            clickIntent.putExtra(Constants.NOTIFICATION_TITLE, title);
-            //            clickIntent.putExtra(Constants.NOTIFICATION_MESSAGE, message);
-            //            clickIntent.putExtra(Constants.NOTIFICATION_URI, uri);
-            //            //        positiveIntent.setData(Uri.parse((new StringBuilder(
-            //            //                "notif://notification.adroidpn.org/")).append(apiKey).append(
-            //            //                "/").append(System.currentTimeMillis()).toString()));
-            //            PendingIntent clickPendingIntent = PendingIntent.getBroadcast(
-            //                    context, 0, clickIntent, 0);
-            //
-            //            notification.setLatestEventInfo(context, title, message,
-            //                    clickPendingIntent);
-            //
-            //            Intent clearIntent = new Intent(
-            //                    Constants.ACTION_NOTIFICATION_CLEARED);
-            //            clearIntent.putExtra(Constants.NOTIFICATION_ID, notificationId);
-            //            clearIntent.putExtra(Constants.NOTIFICATION_API_KEY, apiKey);
-            //            //        negativeIntent.setData(Uri.parse((new StringBuilder(
-            //            //                "notif://notification.adroidpn.org/")).append(apiKey).append(
-            //            //                "/").append(System.currentTimeMillis()).toString()));
-            //            PendingIntent clearPendingIntent = PendingIntent.getBroadcast(
-            //                    context, 0, clearIntent, 0);
-            //            notification.deleteIntent = clearPendingIntent;
-            //
-            //            notificationManager.notify(random.nextInt(), notification);
-
         } else {
             Log.w(LOGTAG, "Notificaitons disabled.");
         }

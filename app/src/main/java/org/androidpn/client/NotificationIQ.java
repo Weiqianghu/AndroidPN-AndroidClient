@@ -17,7 +17,7 @@ package org.androidpn.client;
 
 import org.jivesoftware.smack.packet.IQ;
 
-/** 
+/**
  * This class represents a notifcatin IQ packet.
  *
  * @author Sehwan Noh (devnoh@gmail.com)
@@ -33,6 +33,8 @@ public class NotificationIQ extends IQ {
     private String message;
 
     private String uri;
+
+    private String imgUrl;
 
     public NotificationIQ() {
     }
@@ -89,4 +91,11 @@ public class NotificationIQ extends IQ {
         this.uri = url;
     }
 
+    public String getImgUrl() {
+        return imgUrl;
+    }
+
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
 }

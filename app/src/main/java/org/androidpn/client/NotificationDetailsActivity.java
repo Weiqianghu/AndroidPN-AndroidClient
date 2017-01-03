@@ -22,14 +22,18 @@ import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-/** 
+import com.squareup.picasso.Picasso;
+
+/**
  * Activity for displaying the notification details view.
  *
  * @author Sehwan Noh (devnoh@gmail.com)
@@ -68,12 +72,14 @@ public class NotificationDetailsActivity extends Activity {
                 .getStringExtra(Constants.NOTIFICATION_MESSAGE);
         String notificationUri = intent
                 .getStringExtra(Constants.NOTIFICATION_URI);
+        String notificationImgUrl = intent.getStringExtra(Constants.NOTIFICATION_IMG_URL);
 
         Log.d(LOGTAG, "notificationId=" + notificationId);
         Log.d(LOGTAG, "notificationApiKey=" + notificationApiKey);
         Log.d(LOGTAG, "notificationTitle=" + notificationTitle);
         Log.d(LOGTAG, "notificationMessage=" + notificationMessage);
         Log.d(LOGTAG, "notificationUri=" + notificationUri);
+        Log.d(LOGTAG, "notificationImgUrl=" + notificationImgUrl);
 
         //        Display display = getWindowManager().getDefaultDisplay();
         //        View rootView;
@@ -84,12 +90,12 @@ public class NotificationDetailsActivity extends Activity {
         //        }
 
         View rootView = createView(notificationTitle, notificationMessage,
-                notificationUri);
+                notificationUri, notificationImgUrl);
         setContentView(rootView);
     }
 
     private View createView(final String title, final String message,
-            final String uri) {
+                            final String uri, final String imgUrl) {
 
         LinearLayout linearLayout = new LinearLayout(this);
         linearLayout.setBackgroundColor(0xffeeeeee);
@@ -129,6 +135,18 @@ public class NotificationDetailsActivity extends Activity {
         textDetails.setLayoutParams(layoutParams);
         linearLayout.addView(textDetails);
 
+        if (!TextUtils.isEmpty(imgUrl)) {
+            ImageView imageView = new ImageView(this);
+            layoutParams = new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.MATCH_PARENT);
+            layoutParams.setMargins(30, 10, 30, 20);
+            imageView.setLayoutParams(layoutParams);
+            Picasso.with(this).load(imgUrl).into(imageView);
+            linearLayout.addView(imageView);
+        }
+
+
         Button okButton = new Button(this);
         okButton.setText("Ok");
         okButton.setWidth(100);
@@ -139,8 +157,8 @@ public class NotificationDetailsActivity extends Activity {
                 if (uri != null
                         && uri.length() > 0
                         && (uri.startsWith("http:") || uri.startsWith("https:")
-                                || uri.startsWith("tel:") || uri
-                                .startsWith("geo:"))) {
+                        || uri.startsWith("tel:") || uri
+                        .startsWith("geo:"))) {
                     intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri));
                 } else {
                     intent = new Intent().setClassName(

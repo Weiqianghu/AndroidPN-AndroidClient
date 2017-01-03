@@ -1,21 +1,21 @@
 #Internal package file, do not edit.
-#Tue Dec 06 23:27:55 CST 2016
-2.base=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/res/resources-debug.ap_
-5.file=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/res/resources-debug.ap_/res/drawable-hdpi-v4/icon.png
+#Tue Jan 03 20:18:01 CST 2017
+2.base=K\:\\Android-workplace\\AndroidPN-AndroidClient\\app\\build\\intermediates\\res\\resources-debug.ap_
+5.file=K\:\\Android-workplace\\AndroidPN-AndroidClient\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable-hdpi-v4\\icon.png
 5.set=ANDROID_RESOURCE
-3.base=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/res/resources-debug.ap_
+3.base=K\:\\Android-workplace\\AndroidPN-AndroidClient\\app\\build\\intermediates\\res\\resources-debug.ap_
 2.set=ANDROID_RESOURCE
-4.base=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/res/resources-debug.ap_
+4.base=K\:\\Android-workplace\\AndroidPN-AndroidClient\\app\\build\\intermediates\\res\\resources-debug.ap_
 count=6
-0.file=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/res/resources-debug.ap_/AndroidManifest.xml
-5.base=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/res/resources-debug.ap_
+0.file=K\:\\Android-workplace\\AndroidPN-AndroidClient\\app\\build\\intermediates\\res\\resources-debug.ap_\\resources.arsc
+5.base=K\:\\Android-workplace\\AndroidPN-AndroidClient\\app\\build\\intermediates\\res\\resources-debug.ap_
 4.set=ANDROID_RESOURCE
-1.file=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/res/resources-debug.ap_/res/layout/main.xml
+1.file=K\:\\Android-workplace\\AndroidPN-AndroidClient\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\layout\\main.xml
 1.set=ANDROID_RESOURCE
-2.file=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/res/resources-debug.ap_/res/drawable/notification.png
-0.base=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/res/resources-debug.ap_
-3.file=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/res/resources-debug.ap_/resources.arsc
+2.file=K\:\\Android-workplace\\AndroidPN-AndroidClient\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\drawable\\notification.png
+0.base=K\:\\Android-workplace\\AndroidPN-AndroidClient\\app\\build\\intermediates\\res\\resources-debug.ap_
+3.file=K\:\\Android-workplace\\AndroidPN-AndroidClient\\app\\build\\intermediates\\res\\resources-debug.ap_\\AndroidManifest.xml
 3.set=ANDROID_RESOURCE
-1.base=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/res/resources-debug.ap_
-4.file=/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/build/intermediates/res/resources-debug.ap_/res/raw/androidpn.properties
+1.base=K\:\\Android-workplace\\AndroidPN-AndroidClient\\app\\build\\intermediates\\res\\resources-debug.ap_
+4.file=K\:\\Android-workplace\\AndroidPN-AndroidClient\\app\\build\\intermediates\\res\\resources-debug.ap_\\res\\raw\\androidpn.properties
 0.set=ANDROID_RESOURCE

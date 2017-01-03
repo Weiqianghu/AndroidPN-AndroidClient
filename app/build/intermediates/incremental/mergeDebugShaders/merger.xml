@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/src/main/shaders"/></dataSet><dataSet config="debug"><source path="/home/huweiqiang/AndroidStudioProjects/androidpn-client/app/src/debug/shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="K:\Android-workplace\AndroidPN-AndroidClient\app\src\main\shaders"/></dataSet><dataSet config="debug"><source path="K:\Android-workplace\AndroidPN-AndroidClient\app\src\debug\shaders"/></dataSet></merger>

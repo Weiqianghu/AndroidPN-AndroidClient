@@ -15,12 +15,12 @@
  */
 package org.androidpn.client;
 
+import android.content.Intent;
+import android.util.Log;
+
 import org.jivesoftware.smack.PacketListener;
 import org.jivesoftware.smack.packet.IQ;
 import org.jivesoftware.smack.packet.Packet;
-
-import android.content.Intent;
-import android.util.Log;
 
 /**
  * This class notifies the receiver of incoming notifcation packets asynchronously.
@@ -54,6 +54,7 @@ public class NotificationPacketListener implements PacketListener {
                 String notificationMessage = notification.getMessage();
                 //                String notificationTicker = notification.getTicker();
                 String notificationUri = notification.getUri();
+                String notificationImgUrl = notification.getImgUrl();
 
                 Intent intent = new Intent(Constants.ACTION_SHOW_NOTIFICATION);
                 intent.putExtra(Constants.NOTIFICATION_ID, notificationId);
@@ -62,6 +63,7 @@ public class NotificationPacketListener implements PacketListener {
                 intent.putExtra(Constants.NOTIFICATION_TITLE, notificationTitle);
                 intent.putExtra(Constants.NOTIFICATION_MESSAGE, notificationMessage);
                 intent.putExtra(Constants.NOTIFICATION_URI, notificationUri);
+                intent.putExtra(Constants.NOTIFICATION_IMG_URL, notificationImgUrl);
                 //                intent.setData(Uri.parse((new StringBuilder(
                 //                        "notif://notification.androidpn.org/")).append(
                 //                        notificationApiKey).append("/").append(

@@ -1,9 +1,5 @@
 [
     {
-        "merged": "K:\\home\\huweiqiang\\AndroidStudioProjects\\androidpn-client\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\icon.png",
-        "source": "K:\\home\\huweiqiang\\AndroidStudioProjects\\androidpn-client\\app\\src\\main\\res\\drawable-hdpi\\icon.png"
-    },
-    {
         "merged": "K:\\Android-workplace\\AndroidPN-AndroidClient\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi\\icon.png",
         "source": "K:\\Android-workplace\\AndroidPN-AndroidClient\\app\\src\\main\\res\\drawable-hdpi\\icon.png"
     }
